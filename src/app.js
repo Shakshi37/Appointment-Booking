@@ -4,10 +4,10 @@ const slotRoute= require('./routes/slot.route');
 const bookingRoute= require('./routes/booking.route');
 const handleError=require('./middleware/errorHandler');
 const app = express();
-
+const cors = require("cors");
 // Middleware
 const whitelist = [process.env.ALLOWED_ORIGIN.split(',')].flat()
-
+console.log(whitelist)
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || origin == undefined) {
